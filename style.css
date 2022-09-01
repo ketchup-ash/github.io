@@ -1,0 +1,162 @@
+* {
+    font-family: 'Silkscreen', cursive;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #3D3C42;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+.web-name {
+    color: #FEFBF6;
+    font-size: 40px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li {
+    list-style: none;
+    font-size: 24px;
+}
+
+.nav-links a {
+    color: #FEFBF6;
+    padding: 13px;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    background-color: #A6D1E6;
+}
+
+.nav-links li a.active {
+    background-color: #7F5283;
+}
+
+main {
+    position: relative;
+    color: #3D3C42;
+    margin-top: 8vh;
+    min-height: 92vh;
+    padding: 10px;
+    text-align: center;
+    display: block;
+}
+
+.grad {
+    height: 100%;
+    width: 100%;
+    background-color: #7F5283;
+    background-image: linear-gradient(to bottom right, #7F5283, #F94892);
+}
+
+main h1 {
+    color: #FEFBF6;
+    font-size: 2.5em;
+}
+
+.info {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    color: #FEFBF6;    
+    width: 100%;
+    align-items: center;
+    height: 70vh;
+}
+
+.profile-pic {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #FEFBF6;
+    border-radius: 9999px;
+}
+
+.profile-pic img {
+    position: absolute;
+    border-radius: 9999px;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.profile-about {
+    width: 50%;
+}
+
+.profile-about p {
+    text-align: center;
+    font-size: 1.7em;
+}
+
+.login-box {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: #3D3C4295;
+    width: 450px;
+    height: 520px;
+    position: absolute;
+    color: #FEFBF6;
+    padding: 40px;
+}
+
+.login-box h2 {
+    padding: 20px 0px 30px 0px;
+    font-size: 40px;
+}
+
+.login-box input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #FEFBF6;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #FEFBF6;
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.login-box p {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.login-box input[type="submit"] {
+    background-color: #581f5d;
+    outline: none;
+    height: 40px;
+    border: 1px solid #FEFBF6;
+    font-size: 22px;
+    color: #FEFBF6;
+    width: 100%;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover {
+    background-color: #7F5283;
+}
