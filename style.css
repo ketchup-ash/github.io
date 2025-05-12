@@ -1,0 +1,440 @@
+/* Basic Reset & Defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #f0f0f0; /* Default text color changed to light */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+
+    /* --- Animated Gradient Background --- */
+    background: linear-gradient(-45deg, #8A2BE2, #BA55D3, #483D8B, #DA70D6); /* Violet gradient */
+    background-size: 400% 400%; /* Make gradient large */
+    animation: gradientAnimation 20s ease infinite; /* Apply animation */
+    /* NOTE: We don't need background-attachment: fixed here,
+       the animation moves the large background itself, creating the effect.
+       Content will scroll OVER this animated body background. */
+}
+
+/* --- Keyframes for the Gradient Animation --- */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #a8d8ff; /* Lighter blue for links */
+}
+
+a:hover {
+    color: #d1e9ff; /* Even lighter on hover */
+}
+
+/* Utility Classes */
+.cta-button {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px; /* More rounded */
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px); /* Frosted glass effect */
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px); /* Slight lift on hover */
+    color: #fff;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(28, 28, 40, 0.6); /* Darker semi-transparent */
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Frosted glass effect for header */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff; /* White logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px; /* Slightly more space */
+}
+
+.nav-links a {
+    color: #e0e0e0; /* Light gray nav links */
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #fff; /* White on hover */
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Larger icon */
+    cursor: pointer;
+    color: #fff; /* White icon */
+}
+
+/* Section Styling */
+section {
+    padding: 5rem 0; /* More vertical padding */
+    margin-bottom: 2rem; /* Space between sections */
+    /* Add a subtle background/border to section content containers for definition */
+}
+
+section .container {
+     background-color: rgba(255, 255, 255, 0.05); /* Very subtle overlay */
+     padding: 2rem;
+     border-radius: 10px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(5px); /* Subtle blur for content background */
+}
+
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    color: #fff; /* White headings */
+    font-weight: 600;
+}
+
+/* Hero Section - Make it stand out more, no container background needed */
+.hero {
+    color: #fff;
+    text-align: center;
+    padding: 8rem 0; /* Even more padding */
+    min-height: 70vh; /* Ensure it takes significant space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem; /* More space after hero */
+}
+.hero .container { /* Override section container style for hero */
+    background-color: transparent;
+    padding: 0 20px; /* Reset padding */
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Larger heading */
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Add text shadow */
+}
+
+.hero .subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.hero .cta-button {
+    padding: 15px 30px; /* Larger hero button */
+    font-size: 1.1rem;
+}
+
+
+/* About Section */
+.about p {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    text-align: center;
+    color: #e0e0e0; /* Lighter text for paragraphs */
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Increased gap */
+}
+
+.project-card {
+    background-color: rgba(40, 40, 55, 0.5); /* Darker semi-transparent cards */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* More lift */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.project-card img, .project-card .placeholder-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9; /* Slightly fade image */
+}
+.project-card .placeholder-image {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin: 1rem 1.2rem 0.5rem 1.2rem;
+    color: #fff; /* White project titles */
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin: 0 1.2rem 1rem 1.2rem;
+    flex-grow: 1;
+    color: #dcdcdc; /* Light gray project description */
+}
+
+.project-links {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    margin-top: auto;
+}
+
+.project-links a {
+    margin-right: 15px;
+    font-weight: bold;
+    color: #a8d8ff; /* Link color */
+}
+.project-links a:hover {
+     color: #fff;
+}
+
+/* Skills Section */
+.skills ul.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px; /* More gap */
+}
+
+.skills li {
+    background-color: rgba(255, 255, 255, 0.15); /* Lighter transparent background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.skills li:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+.contact h2 {
+    color: #fff;
+}
+.contact p {
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #e0e0e0;
+}
+.contact .cta-button {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.contact .cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    font-size: 2rem; /* Larger social icons */
+    margin: 0 15px;
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff; /* Full white on hover */
+    transform: scale(1.1); /* Scale icons on hover */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(10, 10, 20, 0.5); /* Darker transparent footer */
+    color: #aaa; /* Gray footer text */
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Fade-in Animation --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly lower */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+     section {
+        padding: 4rem 0;
+        margin-bottom: 1rem;
+    }
+    section .container {
+        padding: 1.5rem;
+    }
+     section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(28, 28, 40, 0.95); /* More opaque mobile menu */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        padding-bottom: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0; /* More vertical space */
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+     html {
+        font-size: 14px;
+    }
+    .hero {
+        padding: 6rem 0;
+        min-height: 60vh;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+     section .container {
+        padding: 1rem;
+    }
+     section h2 {
+        font-size: 1.8rem;
+    }
+     .cta-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+     }
+     .hero .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+     }
+     .social-links a {
+        font-size: 1.8rem;
+        margin: 0 10px;
+     }
+}
